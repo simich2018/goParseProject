@@ -47,7 +47,6 @@ func main() {
 		panic(err)
 	}
 
-	newCars := "Есть новые автомобили\nhttps://showroom.hyundai.ru/"
 	if !strings.Contains(source, "На данный момент все автомобили распроданы") {
 		//save to file
 		f, err := os.Create(log)
@@ -65,7 +64,7 @@ func main() {
 		bot, _ := tgbotapi.NewBotAPI("2031940210:AAHUIaQJndVEtdBonIGelJisaw4g0lL6UhQ")
 		bot.Debug = true
 
-		msg := tgbotapi.NewMessage(int64(-1001651654069), newCars)
+		msg := tgbotapi.NewMessage(int64(-1001651654069), "Есть новые автомобили\nhttps://showroom.hyundai.ru/")
 
 		if _, err := bot.Send(msg); err != nil {
 			panic(err)
